@@ -1,7 +1,7 @@
 require(['scripts/models/project'], function(Project) {
 
 	describe('A Project Model', function() {
-
+		//console.log(Project);
 		beforeEach(function() {
 		  this.project = new Project({
 		  	p_name: 'Test Project',
@@ -9,7 +9,8 @@ require(['scripts/models/project'], function(Project) {
 		  });
 		});
 
-		it('should exist', function() {
+		it('should be defined', function() {
+			//Project model should be defined
 			expect(Project).toBeDefined();
 		});
 
