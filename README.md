@@ -21,6 +21,7 @@ Skapat en stomme, eller ryggrad av mitt projekt, ska fixa readme, dokumentation 
 
 ```javascript
 
+//Project model
 Project = {
     "id" : "1", //Int
     "status_id" : "1", //Int - Foreign key
@@ -32,7 +33,7 @@ Project = {
     ]
 }
  
-# Task Model
+// Task Model
 Task = {
     "id" : "1", //Int,
     "proj_id" : "1", //Int - Foreign key
@@ -41,7 +42,7 @@ Task = {
     "description" : "Create application outline, documentation, usecases and UML" //String
 }
  
-# Status Model
+// Status Model
 Status = {
     "id" : 1, //Int,
     "name" : "Started" //String
