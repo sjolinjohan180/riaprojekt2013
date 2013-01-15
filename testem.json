@@ -1,0 +1,15 @@
+{
+	"framework": "jasmine",
+	"src_files": [
+		"scripts/vendor/jquery/dist/jquery.js",
+		"scripts/vendor/underscore/underscore.js",
+		"scripts/vendor/backbone/backbone.js",
+		"scripts/vendor/require.js",
+		"scripts/models/status.js",
+		"scripts/models/project.js",		
+		"scripts/models/task.js",
+		"tests/models/statusTest.js",
+		"tests/models/projectTest.js",		
+		"tests/models/taskTest.js"
+	]
+}
