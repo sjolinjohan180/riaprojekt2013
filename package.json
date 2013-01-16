@@ -1,8 +1,7 @@
-
 {
 	"name": "Project",
 	"jam": {
-		"packageDir": "app/scripts/vendor",
+		"packageDir": "scripts/vendor",
 		"baseUrl": "app",
 		"dependencies": {
 			"backbone": null 
