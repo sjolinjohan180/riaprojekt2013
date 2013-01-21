@@ -1,5 +1,5 @@
-define(['backbone', 'project'], function(Backbone, App){
-	return Backbone.Model.extend({
+define(['backbone', 'relational','underscore', 'project'], function(Backbone, Relational, _, Project){
+	return Backbone.RelationalModel.extend({
 		validate: function(attrs) {
 			if ( attrs.task_name === '' ) {
 				return 'A name is required!';

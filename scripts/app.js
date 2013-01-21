@@ -14,10 +14,16 @@ require(['project', 'task'], function(Project, Task){
 		task_description: "Make sure we can run jasmine tests with testem and require"
 	});
 
-	var task1 = new Task({
-		task_name: 'Set up tests',
+	var task2 = new Task({
+		task_name: 'Make sure it works',
 		task_description: "Make sure we can run jasmine tests with testem and require"
 	});
 
-	console.log(p.toJSON());
+	proj.bind( 'add:tasks', function( model, coll ) {
+        // Will see a Job with attributes { person: paul, company: niceCompany } being added here
+    });
+
+    proj.get( 'tasks' ).add( { task: task1 } );
+
+	console.log(proj.toJSON());
 });
