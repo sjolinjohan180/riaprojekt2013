@@ -1,3 +1,4 @@
+// ### Project Test Suit
 require(['project'], function(App){
 	describe('A Project Model test suit', function() {
 				
@@ -8,6 +9,7 @@ require(['project'], function(App){
 		  	p_description: 'This is test project'
 		  });
 		});
+
 		//Project model should be defined
 		it('Project model should be defined', function() {
 			expect(this.project).toBeDefined();

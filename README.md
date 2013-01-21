@@ -3,7 +3,7 @@ Ria - JavaScript med backbone, underscore, jquery och require
 
 ##Projektverktyg i javascript
 
-Skapat en stomme, eller ryggrad av mitt projekt, ska fixa readme, dokumentation osv va det lider...
+Appen skapad som en del av kursen Ria, avancerad jacascript utv, LNU Vintern/Våren 2013
 
 ## Relationer
 
