@@ -1,9 +1,9 @@
-require(['task'], function(App){
+require(['task'], function(Task){
 	describe('A Task Model test suit', function() {
 				
 		//Set up a model to be used by the tests
 		beforeEach(function() {
-		  this.task = new App.Models.Task({
+		  this.task = new Task({
 		  	task_name: 'Set up tests',
 		  	task_description: "Make sure we can run jasmine tests with testem and require"
 		  });

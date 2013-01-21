@@ -4,11 +4,7 @@
 
 /* Is this included? */
 define(['backbone', 'underscore'], function(Backbone, _){
-	var App = App || {};
-	App.Views = App.Views || {};
-
-	//Extend the backbone view
-	App.Views.AppView = Backbone.View.extend({
+	return Backbone.View.extend({
 		
 		//Initialize
 		initialize: function(){
@@ -16,7 +12,5 @@ define(['backbone', 'underscore'], function(Backbone, _){
 		}
 
 	});
-
-	return App;
 
 });

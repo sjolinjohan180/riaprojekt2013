@@ -1,10 +1,10 @@
 // ### Project Test Suit
-require(['project'], function(App){
+require(['project'], function(Project){
 	describe('A Project Model test suit', function() {
 				
 		//Set up a model to be used by the tests
 		beforeEach(function() {
-		  this.project = new App.Models.Project({
+		  this.project = new Project({
 		  	p_name: 'Test Project',
 		  	p_description: 'This is test project'
 		  });

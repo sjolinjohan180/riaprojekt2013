@@ -1,13 +1,10 @@
 //Project Model
-define(['backbone', 'relational','handlebars', 'task'], function(Backbone, Relational, Handlebars, Task){
-	var App = App || {};
-	App.Models = App.Models || {};
+define(['backbone', 'relational','underscore', 'task'], function(Backbone, Relational, _, Task){
+	return Backbone.RelationalModel.extend({
 
-	App.Models.Project = Backbone.Model.extend({
-
-		// Initialize the Model
+		//Initialize
 		initialize: function(){
-			console.log(Relational);
+			
 		},
 
 		// Validate when created or updated
@@ -19,9 +16,15 @@ define(['backbone', 'relational','handlebars', 'task'], function(Backbone, Relat
 			if ( attrs.p_description === '' ) {
 				return 'A description is required!';
 			}
-		}
+		},
+		relations: [{
+			type: Backbone.HasMany,
+			key: "tasks",
+			relatedModel: Task,
+			reverseRelation: {
+                key: 'project'
+            }
+		}]
 	});
-
-	return App;
 });
 

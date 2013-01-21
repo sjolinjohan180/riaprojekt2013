@@ -1,8 +1,5 @@
 define(['backbone', 'project'], function(Backbone, App){
-	var App = App || {};
-	App.Models = App.Models || {};
-
-	App.Models.Task = Backbone.Model.extend({
+	return Backbone.Model.extend({
 		validate: function(attrs) {
 			if ( attrs.task_name === '' ) {
 				return 'A name is required!';
@@ -13,7 +10,4 @@ define(['backbone', 'project'], function(Backbone, App){
 			}
 		}
 	});
-
-	return App;
-
 });

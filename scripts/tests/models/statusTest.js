@@ -1,9 +1,9 @@
-require(['status'], function(App){
+require(['status'], function(Status){
 	describe('A Status Model test suit', function() {
 				
 		//Set up a model to be used by the tests
 		beforeEach(function() {
-		  this.project_status = new App.Models.Status({
+		  this.project_status = new Status({
 		  	status_name: 'Started'
 		  });
 		});
