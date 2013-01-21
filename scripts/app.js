@@ -2,12 +2,12 @@
 * This is the Application bootstrap file
 * It will kickstart the app and render application view with populated collections
 */
-require(['project', 'task'], function(Project, Task){
-	var proj = new Project({
-		id: 1, 
-		p_name: 'test',
-		p_description: 'test desc'
-	});
+require(['project', 'task', 'projectView', 'projectsView', 'projectCollection', 'availableStatuses', 'statusCollection'], 
+	function(Project, Task, ProjectView, ProjectsView, ProjectCollection, AvailableStatuses, StatusCollection){
+	var proj = new Project();
+
+	var proj2 = new Project();
+	var proj3 = new Project();
 
 	var task1 = new Task({
 		task_name: 'Set up tests',
@@ -23,7 +23,17 @@ require(['project', 'task'], function(Project, Task){
         // Will see a Job with attributes { person: paul, company: niceCompany } being added here
     });
 
-    proj.get( 'tasks' ).add( { task: task1 } );
+    proj.get( 'tasks' ).add( { model: task1 } );
+    proj.get( 'tasks' ).add( { model: task2 } );
 
-	console.log(proj.toJSON());
+    console.log(proj.toJSON());
+
+    var projectCollection = new ProjectCollection();
+    projectCollection.add(proj);
+    projectCollection.add(proj2);
+    projectCollection.add(proj3);
+	console.log(projectCollection.toJSON());
+
+	var statuses = new StatusCollection();
+	console.log(statuses);
 });

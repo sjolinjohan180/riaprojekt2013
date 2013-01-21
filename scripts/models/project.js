@@ -1,10 +1,9 @@
 //Project Model
-define(['backbone', 'relational','underscore', 'task'], function(Backbone, Relational, _, Task){
+define(['backbone', 'relational','underscore', 'status','task'], function(Backbone, Relational, _, Status, Task){
 	return Backbone.RelationalModel.extend({
-
-		//Initialize
-		initialize: function(){
-			
+		defaults: {
+			p_name: 'Project name',
+			p_description: 'Project description'
 		},
 
 		// Validate when created or updated

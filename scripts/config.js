@@ -10,6 +10,12 @@ require.config({
 		status: 'models/status',
 		task: 'models/task',
 		project: 'models/project',
+		projectCollection: 'collections/projectcollection',
+		statusCollection: 'collections/statuscollection',
+		taskCollection: 'collections/taskcollection',
+		projectView: 'views/projectview',
+		projectsView: 'views/projectsview',
+		availableStatuses: 'helpers/availablestatuses',
 		appView: 'views/appview'
 	},
 	shim: {
