@@ -17,7 +17,7 @@ Appen skapad som en del av kursen RIA-utveckling med JavaScript, LNU Vintern/Vå
 
 >varje task kan ha exakt en status
 
-## Project Model
+## Applikationens objekt/modeller
 
 ```javascript
 
