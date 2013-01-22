@@ -11,12 +11,13 @@ define(['backbone', 'jquery', 'underscore', 'handlebars', 'project'], function(B
 
 		//Constructor
 		initialize: function(){
-			this.render();
+			//this.render();
 		},
 
 		//The way to fill our tag element (el) with project data
 		render: function(){
-			this.$el.html(this.model.toJSON());
+			this.$el.html( this.template( this.model.toJSON() ) );
+			return this;
 		}
 	});
 });

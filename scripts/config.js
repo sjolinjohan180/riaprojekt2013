@@ -16,7 +16,8 @@ require.config({
 		projectView: 'views/projectview',
 		projectsView: 'views/projectsview',
 		availableStatuses: 'helpers/availablestatuses',
-		appView: 'views/appview'
+		appView: 'views/appview',
+		router: 'router'
 	},
 	shim: {
 		underscore: {
