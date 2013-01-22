@@ -24,28 +24,27 @@ Appen skapad som en del av kursen RIA-utveckling med JavaScript, LNU Vintern/Vå
 //Project model
 Project = {
     "id" : "1", //Int
-    "status_id" : "1", //Int - Foreign key
-    "name" : "Ria Application", //String
-    "Description" : "Learn advanced JavaScript by crafting a RIA with backbone.js", //String
+    "status" : { name: "Started" }, //Related object
+    "p_name" : "Ria Application", //String
+    "p_description" : "Learn advanced JavaScript by crafting a RIA with backbone.js", //String
     "tasks" : [
-        //Collection of tasks
+        //Collection of tasks objects
     ]
 }
  
 // Task Model
 Task = {
     "id" : "1", //Int,
-    "proj_id" : "1", //Int - Foreign key
-    "status_id" : "1", //Int - Foreign key
-    "project" : "1", // Reflected id by Backbone Relations
-    "name" : "Create Documentation", //String
-    "description" : "Create application outline, documentation, usecases and UML" //String
+    "project" : { //Project object}, //Related object
+    "status" : { name: "Started" }, //Related object
+    "task_name" : "Create Documentation", //String
+    "task_description" : "Create application outline, documentation, usecases and UML" //String
 }
  
 // Status Model
 Status = {
     "id" : 1, //Int,
-    "name" : "Started" //String
+    "status_name" : "Started" //String
 }
 
 ```
