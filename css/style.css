@@ -1,0 +1,15 @@
+ul.projects{
+	list-style-type: none;
+}
+
+ul li.project{
+	padding: 5px 10px;
+	margin: 7px;
+	border: 1px solid gray;
+	box-shadow: 2px 2px 2px #3f3f3f;
+}
+
+ul li.project a{
+	height: 100%;
+	width: 100%;
+}

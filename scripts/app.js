@@ -1,6 +1,8 @@
 /*
-* This is the Application bootstrap file
-* It will kickstart the app and render application view with populated collections
+|--------------------------------------------------------------------------
+| Application Bootstrap
+| It will kickstart the app and render application view with populated collections
+|--------------------------------------------------------------------------
 */
 require(['project', 'task', 'projectView', 'projectsView', 'projectCollection', 'availableStatuses', 'statusCollection', 'router', 'appView'], 
 	function(Project, Task, ProjectView, ProjectsView, ProjectCollection, AvailableStatuses, StatusCollection, Router, AppView){
@@ -32,6 +34,7 @@ require(['project', 'task', 'projectView', 'projectsView', 'projectCollection', 
     projectCollection.add(proj);
     projectCollection.add(proj2);
     projectCollection.add(proj3);
+    
 
 	//Here is were the acctuall application starts
 	new Router;

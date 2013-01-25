@@ -6,7 +6,7 @@ require.config({
 		backbone: 'vendor/backbone/backbone',
 		relational: 'vendor/backbone-relational/relational',
 		handlebars: 'vendor/handlebars/handlebars',
-		localstorage: 'vendor/localstorage/backbone.localstorage',
+		localStorage: 'vendor/localstorage/backbone.localstorage',
 		status: 'models/status',
 		task: 'models/task',
 		project: 'models/project',

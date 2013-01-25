@@ -1,6 +1,7 @@
 //Project Model
 define(['backbone', 'relational','underscore', 'status','task'], function(Backbone, Relational, _, Status, Task){
 	return Backbone.RelationalModel.extend({
+		//Default values
 		defaults: {
 			p_name: 'Project name',
 			p_description: 'Project description'
@@ -16,6 +17,7 @@ define(['backbone', 'relational','underscore', 'status','task'], function(Backbo
 				return 'A description is required!';
 			}
 		},
+		//Related objects
 		relations: [{
 			type: Backbone.HasMany,
 			key: "tasks",
