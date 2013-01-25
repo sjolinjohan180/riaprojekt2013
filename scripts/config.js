@@ -20,15 +20,15 @@ require.config({
 		router: 'router'
 	},
 	shim: {
-		underscore: {
-			exports: "_"
-		},
-    	backbone: {
-    		deps: ['underscore', 'jquery'],
+		backbone: {
+    		deps: ['underscore', 'jquery', 'relational', 'localStorage'],
       		exports: 'Backbone'
     	},
     	relational: {
     		deps: ['backbone']
+    	},
+    	localStorage: {
+    		deps: deps: ['backbone']
     	}
 	}
 });
