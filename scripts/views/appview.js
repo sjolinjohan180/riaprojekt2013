@@ -3,22 +3,30 @@
 | App View
 |--------------------------------------------------------------------------
 */
-define(['backbone', 'underscore', 'projectsView'], function(Backbone, _, ProjectsView){
+define(['backbone', 'jquery', 'underscore','projectsView', 'addProjectView'], function(Backbone, $, _, ProjectsView, AddProjectView){
 
 	return Backbone.View.extend({
 		initialize: function() {
-			//vent.on('contact:edit', this.editContact, this);
 			
-			//var addContactView = new App.Views.AddContact({ collection: App.contacts });
-			
+			//Create a new ProjectCollection-view and inject the collection, then render it
 			var projectsView = new ProjectsView({ collection: this.collection }).render();
-			$('#allProjects').append(projectsView.el);
+			//Apend it to the AllProjectsTable
+			$('#allProjects').append( projectsView.el );
+
+			//Create a new AddProjecView and Inject the collection
+			this.addProjectView = new AddProjectView({ collection: this.collection });
+
+			//Listen for Edit event
+			projectsView.on('project:edit', this.editProject, this);
 		},
 
-		editContact: function(contact) {
-			var editContactView = new App.Views.EditContact({ model: contact });
-			$('#editContact').html(editContactView.el);
-		}
+		editProject: function(project){
+			//create a new edit view and bind the model
+			var editProjectView = new EditProjectView({ model: project });
+
+			//apend form to the DOM
+			$('#main_div').append(editProjectView.el);
+		},
 	});
 
 });

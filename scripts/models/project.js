@@ -1,10 +1,26 @@
-//Project Model
-define(['backbone', 'relational','underscore', 'status','task'], function(Backbone, Relational, _, Status, Task){
+define(['backbone', 'jquery', 'underscore', 'relational', 'status', 'task'], function(Backbone, $, _, Relational, Status, Task){
 	return Backbone.RelationalModel.extend({
 		//Default values
 		defaults: {
 			p_name: 'Project name',
-			p_description: 'Project description'
+			p_description: 'Project description',
+			status: new Status({ status_name: 'TO DO'})
+		},
+
+		url: '/project',
+
+		//Constructor
+		initialize: function(){
+			
+		},
+
+		//Events
+		events: {
+			'add:tasks': 'this.addTask'
+		},
+
+		addTask: function(){
+			
 		},
 
 		// Validate when created or updated
@@ -17,6 +33,7 @@ define(['backbone', 'relational','underscore', 'status','task'], function(Backbo
 				return 'A description is required!';
 			}
 		},
+
 		//Related objects
 		relations: [{
 			type: Backbone.HasMany,
@@ -24,6 +41,13 @@ define(['backbone', 'relational','underscore', 'status','task'], function(Backbo
 			relatedModel: Task,
 			reverseRelation: {
                 key: 'project'
+            }
+		},{
+			type: Backbone.HasOne,
+			key: "status",
+			relatedModel: Status,
+			reverseRelation: {
+                key: 'projects'
             }
 		}]
 	});

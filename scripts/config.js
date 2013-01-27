@@ -14,6 +14,8 @@ require.config({
 		statusCollection: 'collections/statuscollection',
 		taskCollection: 'collections/taskcollection',
 		projectView: 'views/projectview',
+		addProjectView: 'views/addprojectview',
+		editProjectView: 'views/editprojectview',
 		projectsView: 'views/projectsview',
 		availableStatuses: 'helpers/availablestatuses',
 		appView: 'views/appview',
@@ -21,14 +23,14 @@ require.config({
 	},
 	shim: {
 		backbone: {
-    		deps: ['underscore', 'jquery', 'relational', 'localStorage'],
+    		deps: ['underscore', 'jquery' ],
       		exports: 'Backbone'
     	},
     	relational: {
     		deps: ['backbone']
     	},
     	localStorage: {
-    		deps: deps: ['backbone']
+    		deps: ['backbone']
     	}
 	}
 });

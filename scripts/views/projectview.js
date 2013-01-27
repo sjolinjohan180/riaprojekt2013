@@ -1,23 +1,48 @@
-define(['backbone', 'jquery', 'underscore', 'handlebars', 'project'], function(Backbone, $, _, Handlebars, Project){
+define(['backbone', 'jquery', 'underscore', 'handlebars', 'project', 'editProjectView'], function(Backbone, $, _, Handlebars, Project, EditProjectView){
 
 	return Backbone.View.extend({
 		//Projects will render them selfs as li tags
-		tagName: 'li',
+		tagName: 'tr',
 		//With the class of project
 		className: 'project', 
 
 		//How to render it
 		template: _.template($('#projectTemplate').html()),
 
+		//What should we listen for?
+		events: {
+			'click a.delete': 'deleteProject',
+			'click a.edit': 'editProject'
+		},
+
 		//Constructor
 		initialize: function(){
-			//this.render();
+			//When destroy event is triggered, unrender this project
+			this.model.on('destroy', this.unRender, this);
 		},
 
 		//The way to fill our tag element (el) with project data
 		render: function(){
 			this.$el.html( this.template( this.model.toJSON() ) );
 			return this;
-		}
+		},
+
+		//Function to delete a project
+		deleteProject: function(){
+			//Destroy the model, wil trigger destroy event
+			this.model.destroy();
+		},
+
+		//Function to unrender a delete project
+		unRender: function(){
+			this.remove(); //this.$el.remove();
+		},
+
+		//Function to edit Project
+		editProject: function(e){
+			e.preventDefault();
+			//Trigger an Event
+			this.trigger('project:edit', this.model);
+		}	
 	});
 });
