@@ -32,6 +32,13 @@ require(['project'], function(Project){
 			var status = this.project.set('p_description', '');
 			expect(status).toBeFalsy();
 		});
+
+		//Model should have a status of TO DO
+		it("Project model should have TO DO status when initialized", function() {
+			var status = this.project.get('status');
+			var status_name = status.name;
+			expect(status_name).toBe('TO DO');
+		});
 	});
 });
 
