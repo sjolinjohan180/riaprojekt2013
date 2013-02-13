@@ -9,6 +9,12 @@ module.exports = function( grunt ) {
 
     // Project configuration
     // ---------------------
+  server: {
+	  rewrite: [
+		  "^/admin$ / [L]",
+		  "^/admin/.*$ /"
+	  ]
+  },
 
     // specify an alternate install location for Bower
     bower: {

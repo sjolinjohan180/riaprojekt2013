@@ -15,7 +15,9 @@ require.config({
   	bootstrap: "../scripts/libs/bootstrap.min",
 	postCollection: "../scripts/modules/postModule/collections/PostCollection",
 	postModel: "../scripts/modules/postModule/models/PostModel",
-	postView: "../scripts/modules/postModule/views/PostView"
+	postListView: "../scripts/modules/postModule/views/PostListView",
+	postView: "../scripts/modules/postModule/views/PostView",
+  	createPostView: "../scripts/modules/postModule/views/CreatePostView"
 
   },
 

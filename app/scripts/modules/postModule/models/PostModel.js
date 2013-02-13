@@ -5,9 +5,10 @@ define(['backbone', 'jquery'], function (Backbone, $) {
 		initialize: function () {
 		},
 		defaults: {
-			name: "World!",
+			title: "World!",
 			author: "No author",
-			content: "No content"
+			content: "No content",
+			sticky: "False"
 		},
 		saveItem: function() {
 			this.save();

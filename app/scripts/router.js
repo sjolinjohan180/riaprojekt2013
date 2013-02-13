@@ -1,11 +1,13 @@
 define([
 	// Application.
 	"app",
-	"postView",
+	"postListView",
+	"postCollection",
+	"createPostView",
 	"postModel"
 ],
 
-function(app, PostView, PostModel) {
+function(app, PostListView, PostCollection, CreatePostView, PostModel) {
   // Defining the application router, you can attach sub routers here
   var Router = Backbone.Router.extend({
     routes: {
@@ -14,12 +16,16 @@ function(app, PostView, PostModel) {
     },
 
     index: function () {
+		var collection = new PostCollection();
+		collection.fetch();
 		app.useLayout("main").setViews({
-			".post": new PostView({model: new PostModel()})
+			".posts": new PostListView({model: new PostModel(), collection: collection})
 		}).render();
     },
   	admin: function () {
-		console.log("admin");
+		app.useLayout("admin").setViews({
+			".createpost": new CreatePostView({collection : new PostCollection()})
+		}).render();
   	}
   });
 
