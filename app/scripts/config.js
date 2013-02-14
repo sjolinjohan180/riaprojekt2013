@@ -70,7 +70,6 @@ require.config({
 map: {
 	// Ensure Lo-Dash is used instead of underscore.
 	"*": { "underscore": "libs/lodash.underscore" }
-
 	// Put additional maps here.
 }
 
