@@ -13,11 +13,18 @@ require.config({
     jquery: "../scripts/libs/jquery",
     backbone: "../scripts/libs/backbone",
   	bootstrap: "../scripts/libs/bootstrap.min",
-	postCollection: "../scripts/modules/postModule/collections/PostCollection",
+	//Post module
+  	postCollection: "../scripts/modules/postModule/collections/PostCollection",
 	postModel: "../scripts/modules/postModule/models/PostModel",
 	postListView: "../scripts/modules/postModule/views/PostListView",
 	postView: "../scripts/modules/postModule/views/PostView",
-  	createPostView: "../scripts/modules/postModule/views/CreatePostView"
+  	createPostView: "../scripts/modules/postModule/views/CreatePostView",
+  	//Comment module
+  	commentModel: "../scripts/modules/commentModule/models/CommentModel",
+  	commentCollection: "../scripts/modules/commentModule/collections/CommentCollection",
+  	commentView: "../scripts/modules/commentModule/views/commentView",
+  	commentListView: "../scripts/modules/commentModule/views/commentListView",
+  	createCommentView: "../scripts/modules/commentModule/views/CreateCommentView"
 
   },
 

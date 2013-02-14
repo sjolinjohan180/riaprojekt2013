@@ -1,19 +1,31 @@
 
 
-define(['backbone', 'jquery'], function (Backbone, $) {
-	var PostModel = Backbone.Model.extend({
-		initialize: function () {
-		},
+define(['backbone', 'commentModel', 'plugins/backbone-relational'], function (Backbone, CommentModel) {
+	var PostModel = Backbone.RelationalModel.extend({
+
 		defaults: {
 			title: "World!",
 			author: "No author",
 			content: "No content",
 			sticky: "False"
 		},
-		saveItem: function() {
+		initialize: function () {
+			this.on('add:comment', this.addComment, this)
+		},
+		addComment: function (comment) {
+			this.get('comments').add(comment);
 			this.save();
-		}
+		},
+		relations: [{
+			type: Backbone.HasMany,
+			key: 'comments',
+			relatedModel: CommentModel,
+			reverseRelation: {
+				key: 'post'
+			}
+		}]
 	});
 
+	_.extend(PostModel, Backbone.Events);
 	return PostModel;
 });
