@@ -24,7 +24,7 @@ require.config({
   	commentCollection: "../scripts/modules/commentModule/collections/CommentCollection",
   	commentView: "../scripts/modules/commentModule/views/commentView",
   	commentListView: "../scripts/modules/commentModule/views/commentListView",
-  	createCommentView: "../scripts/modules/commentModule/views/CreateCommentView"
+  	createCommentView: "../scripts/modules/commentModule/views/createCommentView"
 
   },
 
