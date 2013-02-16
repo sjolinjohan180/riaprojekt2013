@@ -10,9 +10,14 @@ require.config({
     plugins: "../scripts/plugins",
 
     // Libraries.
-    jquery: "../scripts/libs/jquery",
-    backbone: "../scripts/libs/backbone",
+    JQ: "../scripts/libs/jquery",
+  	purebackbone: "../scripts/libs/backbone-0.9.10",
   	bootstrap: "../scripts/libs/bootstrap.min",
+	"bb-lm": "../scripts/plugins/backbone.layoutmanager",
+  	"bb-loc": "../scripts/plugins/backbone.localStorage",
+  	"bb-rel": "../scripts/plugins/backbone-relational",
+	backbone: "../scripts/libs/backbone",
+
 	//Post module
   	postCollection: "../scripts/modules/postModule/collections/PostCollection",
 	postModel: "../scripts/modules/postModule/models/PostModel",
@@ -29,49 +34,28 @@ require.config({
   },
 
   shim: {
-	"libs/lodash.underscore": {
-		exports: "_"
+	jQ: {
+	  init: function(){
+		  return this.jQuery.noConflict(true);
+	  }
 	},
+
     // Backbone library depends on lodash and jQuery.
-    backbone: {
-		deps: ["libs/lodash.underscore", "jquery"],
+    purebackbone: {
+		deps: ["underscore", "JQ"],
 		exports: "Backbone"
     },
 
-	//Backbone.marionette depends on Backbone.
-	"plugins/backbone.marionette" : {
-		deps : ["backbone"],
-		exports: "Backbone.Marionette"
-	},
-
     // Backbone.LayoutManager depends on Backbone.
-    "plugins/backbone.layoutmanager": {
-		deps: ["backbone"],
-		exports: "Backbone.layoutmanager"
-	},
+    "bb-lm": ["purebackbone"],
+	"bb-loc": ["purebackbone", "underscore"],
+	"bb-rel": ["purebackbone", "underscore"],
 
-	"plugins/backbone.localStorage": {
-		deps : ["jquery", "backbone", "libs/lodash.underscore"],
-		exports : "Backbone.LocalStorage"
-	},
-
-	"plugins/backbone-relational": {
-		deps: ["backbone", "libs/lodash.underscore"],
-		exports: "Backbone.Relational"
-	},
-
-  	"libs/handlebars": {
-		exports:"Handlebars"
-  	},
-
-  	bootstrap:  ["jquery"]
+  	bootstrap:  ["JQ"]
 },
 
-map: {
-	// Ensure Lo-Dash is used instead of underscore.
-	"*": { "underscore": "libs/lodash.underscore" }
-	// Put additional maps here.
-}
-
-
+	map: {
+		// Ensure Lo-Dash is used instead of underscore.
+		"*": { "underscore": "libs/lodash.underscore" }
+	}
 });

@@ -2,19 +2,13 @@
 define(
 [
 	'backbone',
-	'postView',
-	'underscore',
-	'plugins/backbone.layoutmanager'
+	'postView'
 ],
-function (Backbone, PostView, _) {
+function (Backbone, PostView) {
 
 	var PostListView = Backbone.View.extend({
 		template: "post/postlist",
 
-		initialize: function () {
-			Backbone.on('fetch', this.collection, this.render());
-			this.render();
-		},
 		beforeRender: function () {
 			this.collection.models = _.filter(this.collection.models, function (post) {
 				return post.get('sticky') === 'on';
@@ -26,6 +20,11 @@ function (Backbone, PostView, _) {
 					}));
 				}
 			}, this);
+		},
+		serialize: function () {
+			return {
+				count: this.collection.models.length
+			};
 		}
 	});
 

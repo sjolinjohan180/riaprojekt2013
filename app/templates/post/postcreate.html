@@ -1,15 +1,49 @@
 <div class="container">
-    <label for="prop-author">Author</label>
-    <input type="text" name="" id="prop-author">
-    <label for="prop-title">Title</label>
-    <input type="text" name="" id="prop-title">
-    <label for="prop-content">Content</label>
-    <div contenteditable="true" name="" id="prop-content"></div>
-    <label for="prop-sticky">
-        <input type="checkbox" id="prop-sticky">
-        Sticky
-    </label>
-    <p>
-        <button id="submit-post">Create</button>
-    </p>
+    <div class="margin-auto">
+        <input placeholder="Author" type="text" name="" id="prop-author" class="create-post-input" tabindex="3"><br>
+        <input placeholder="Title" type="text" name="" id="prop-title" class="create-post-input" tabindex="4">
+        <div class="tool-bar">
+            <b><a href="#" class="bold-link format-link">B</a></b>
+            <i><a href="#" class="italic-link format-link">I</a></i>
+            <u><a href="#" class="underline-link format-link">U</a></u>
+            <span>
+                <a href="#" class="create-link-link format-link">
+                    <img class="margin-up-image" src="<%= window.location.pathname %>styles/images/link.png" alt="">
+                </a>
+            </span>
+            <span>
+                <a href="#" class="hr-link format-link">
+                    <img src="<%= window.location.pathname %>styles/images/horizontalrule.png" alt="">
+                </a>
+            </span>
+            <span>
+                <a href="#" class="justify-link format-link">
+                    <img class="margin-up-image" src="<%= window.location.pathname %>styles/images/align_justify.png" alt="">
+                </a>
+            </span>
+            <span>
+                <a href="#" class="left-link format-link">
+                    <img class="margin-up-image" src="<%= window.location.pathname %>styles/images/align_left.png" alt="">
+                </a>
+            </span>
+            <span>
+                <a href="#" class="center-link format-link">
+                    <img class="margin-up-image" src="<%= window.location.pathname %>styles/images/align_center.png" alt="">
+                </a>
+            </span>
+            <span>
+                <a href="#" class="right-link format-link">
+                    <img class="margin-up-image" src="<%= window.location.pathname %>styles/images/align_right.png" alt="">
+                </a>
+            </span>
+        </div>
+        <div contenteditable="true" name="" id="prop-content" tabindex="5"></div>
+        <label for="prop-sticky" class="display-hidden">
+            <input type="checkbox" disabled checked="checked" id="prop-sticky" tabindex="6">
+            Sticky
+        </label>
+        <p>
+            <button id="submit-post"tabindex="7">Create</button>
+        </p>
+    </div>
 </div>

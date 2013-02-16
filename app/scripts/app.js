@@ -1,15 +1,9 @@
 define([
 	// Libraries.
-
-	"jquery",
-	"libs/lodash.underscore",
-	"backbone",
-	// Plugins.
-
-	"plugins/backbone.layoutmanager"
+	"backbone"
 ],
 
-function($, _, Backbone, Handlebars) {
+function(Backbone) {
 
   // Provide a global location to place configuration settings and module
   // creation.

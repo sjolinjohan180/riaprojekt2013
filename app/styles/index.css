@@ -2,10 +2,70 @@
 @import "bootstrap.min.css";
 
 body{
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding-top: 10px;
   background-color: #F5F5F5;
 }
+
+footer{
+    margin-top: 200px;
+    text-align: center;
+    color: #e3e3e3;
+    text-shadow: -1px -1px #f4f4f4;
+}
+
+header{
+    font-family: helveticaNeue-light;
+    font-weight: lighter;
+    color:#A85E64;
+    font-size: 3em;
+    text-align: right;
+    height: auto;
+    background-color: #E9E3D7;
+    z-index: 9999;
+    padding: 10px 105px 10px 0;
+    margin: 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+header b{
+    color: #84B8B6;
+    font-size: 0.8em;
+    vertical-align: top
+}
+
+nav{
+    z-index: 9999;
+    font-size: 1.8em;
+    padding: 10px;
+    font-family: helveticaneue-light;
+    margin: -4px 0 70px 0;
+}
+
+nav a{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #E9E3D7;
+    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+    padding: 2px 10px 7px 10px;
+    color: #444444;
+    margin: 0 0 0 32px;
+}
+
+nav a:visited{
+    color:#444444;
+}
+
+nav a:hover{
+    text-decoration: none;
+}
+
+nav a.active{
+    color: rgb(221,57,13);
+}
+
+/* Post div, displays one post with header, content, and some comment stuff */
 .post-inline{
     display: inline-block;
     width: 28%;
@@ -15,14 +75,22 @@ body{
     background-color: #ffffff;
     padding: 0 10px 15px 10px;
 }
+
 .post-inline h2.header{
     color: rgb(221,57,13);
-    margin: 0;
+    margin: 7px 0 0 0 ;
     font-size: 1.4em;
+    line-height: 30px;
+    font-family: helveticaNeue-light;
+    font-weight: lighter;
 }
-.post-inline small {
 
+.post-inline small {
+    font-size: 0.75em;
+    font-family: helveticaNeue-light;
 }
+
+/* A gradient to hide overflow content in the posts content area */
 .fade-out{
     position: absolute;
     bottom: 0em;
@@ -33,53 +101,267 @@ body{
         rgba(255, 255, 255, 1) 100%
     );
 }
-.post-content {
-    margin: 10px 0 0 0;
-    min-height: 100px;
-}
+
+/* Make sure the content never is over 100px, until user clicks toggle link */
 .content-container-toggle{
     max-height: 100px;
     overflow: hidden;
  }
+
+/* on same element as content-container-toggle*/
 .content-container{
     position: relative;
     padding: 0 0 10px 0 ;
 }
+
+/* The post content is in this */
+.post-content {
+    font-family: Georgia,Times,serif;
+    margin: 10px 0 0 0;
+    min-height: 100px;
+}
+
 .post-inline a{
     color: rgb(221, 57, 13);
     text-decoration: underline;
+    font-size: 0.8em;
 }
+
 .read-more-link{
     display: block;
-    margin: 20px 0 0 0;
+    margin: 10px 0 -10px 0;
 }
-.post-inline img{
+
+/* pusher */
+.hide-comments-container{
+    margin:  0 0 10px 0;
+}
+
+.post-inline .content-container img{
     display: block;
     width: 100%;
 }
+
+/* Admin page*/
+
+/* Create posts all inputs */
+.create-post-input{
+    width: 338px;
+}
+
+/* Place holder styles */
+.create-post-input::-webkit-input-placeholder {
+    color: #765F89;
+    opacity: 0.5;
+}
+
+.create-post-input::-moz-placeholder {
+    font-size: 1.2em;
+    color: #765F89;
+    opacity: 0.5;
+}
+
+.create-post-input:-ms-input-placeholder {
+    font-size: 1.2em;
+    color: #765F89;
+    opacity: 0.5;
+}
+
+/* to style all placeholders in the app */
+
+::-webkit-input-placeholder{
+    font-size: 0.9em;
+    font-family: HelveticaNeue-Light;
+}
+
+:-ms-input-placeholder{
+    font-size: 0.9em;
+    font-family: HelveticaNeue-Light;
+}
+
+::-moz-placeholder{
+    font-size: 0.9em;
+    font-family: HelveticaNeue-Light;
+}
+
+/* Commentview, sub-view to postview */
+
+/* create comment */
 .create-comment{
     width: 100%;
     margin: 10px 0 0 0;
     padding: 10px 2px 0 2px;
 }
+
 .create-comment input{
     width: 96%;
 }
 
+/* display comments */
+.comment-container{
+    font-family: Georgia,Times,serif;
+    line-height: 22px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding: 2px 0 2px 0;
+}
+
+.comment-container p{
+    font-size: 0.85em;
+    color: #686868;
+    margin: 0 0 -1px 0;
+}
+
+.comment-container small{
+    color: #999;
+    font-size: 0.7em;
+}
+
+.comment-container img{
+    width: 20px;
+    margin: -5px 0 0 0;
+    opacity: 0.5;
+}
+
+/* contenteditable div, makes it look like a input */
 #prop-content{
-    width: 350px;
+    width: 340px;
     height: auto;
     min-height: 150px;
     margin: 0 0 10px 0;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     border: 1px solid #dddddd;
     background-color: #FFFFFF;
+    border-top: none;
+    padding: 5px;
+    font-family: HelveticaNeue-Light;
 }
+
+/* class given to #prop-content when dragenter event occures */
 .dragenter{
     border: 5px solid #00A000 !important;
 }
+
+/* the toolbar on top of #prop-container */
+.tool-bar{
+    padding: 5px 0 5px 5px;
+    background-color: #e6e6e6;
+    width: 345px;
+    border: 1px solid #dcdcdc;
+    border-bottom: #cacaca 1px solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.tool-bar span{
+    margin: 0 0 0 -2px;
+}
+
+.tool-bar a:hover{
+    text-decoration: none;
+}
+
+.margin-up-image{
+    margin: -5px 0 0 0;
+}
+
+/* style for the options in the toolbar */
+.format-link{
+    padding: 4px 10px;
+    color: #494949;
+    font-family: serif;
+    margin: 0 0 5px 0;
+}
+
+.format-link:visited{
+    color: #494949;
+}
+
+.format-link:hover{
+    color: #000000;
+    outline: 1px solid #bfbfbf;
+}
+
+/* Submit button, big and green */
+#submit-post{
+    background-color: #E9E3D7;
+    border: none;
+    font-size: 1.4em;
+    color: #A85E64;
+    width: 350px;
+    height: 50px;
+    margin: 5px 0 0 0;
+    border: 1px solid #CCC;
+    font-family: HelveticaNeue;
+}
+
+/* Flash messages */
+
+/* flash message basic style */
+.flash-messages{
+    width: 100%;
+    position: fixed;
+    top: 88px;
+    margin: 0 0 0 -130px;
+    padding: 20px;
+}
+/* For all flash messages */
+.comment-created, .no-posts-flash{
+    margin: 0 auto;
+    color: #FFFFFF;
+    text-align:center;
+    width: 250px;
+    padding: 14px 20px 4px 20px;
+    -webkit-animation-name: spaceboots;
+    -webkit-animation-duration: 0.5s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-timing-function: linear;
+}
+/* flash message when no posts are found*/
+.no-posts-flash{
+    padding: 14px 20px 14px 20px;
+    background-color: #A85E64;
+    font-size: 0.9em;
+}
+/* flash message for when comment is created */
+.comment-created{
+    background-color: #6D8764;
+    font-size: 0.9em;
+}
+
+/* Makes a div wiggle*/
+@-webkit-keyframes spaceboots {
+    0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+    10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+    30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+    40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+    50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+    70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+    80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+    90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+    100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
 /*Generics*/
 
 .display-hidden{
     display: none;
+}
+
+.margin-auto{
+    width: 390px;
+    margin: 0 auto;
+}
+/* Icons */
+.symbol{
+    margin: 0 5px 0 0 ;
+}
+
+.spinner{
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 590px;
 }

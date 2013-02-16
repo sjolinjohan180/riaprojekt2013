@@ -1,6 +1,6 @@
 
 
-define(['backbone', 'plugins/backbone-relational'], function (Backbone) {
+define(['backbone'], function (Backbone) {
 
 	var CommentModel = Backbone.RelationalModel.extend({
 		defaults: {

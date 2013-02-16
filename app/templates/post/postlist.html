@@ -1,2 +1,9 @@
 <div class="row-fluid" id="row">
+
+    <div class="flash-messages">
+        <p class="no-posts-flash <%= count === 0 ? '' : 'display-hidden' %>">
+            <img class="icon-no-tbs" src="<%= window.location.pathname %>styles/images/symbol_cross.gif" alt="">
+            <b>Oh noes!</b> No posts found!
+        </p>
+    </div>
 </div>
