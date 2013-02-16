@@ -72,7 +72,7 @@ define(['backbone', 'postModel', 'app'], function (Backbone, PostModel, app) {
 			this.post.set('sticky', this.$('#prop-sticky').val());
 			this.collection.create(this.post);
 
-			app.router.navigate(window.location.pathname, {
+			app.router.navigate('/', {
 				replace:true,
 				trigger:true
 			});
