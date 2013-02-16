@@ -1,7 +1,20 @@
+<nav>
+    <div class="container">
+        <a href="<%= window.location.pathname %>#" class="<%= window.location.hash === '' ? 'active' : '' %>">Main page</a>
+        <a href="#/admin" class="<%= window.location.hash === '/admin' ? 'active' : '' %>">Admin panel</a>
+    </div>
+</nav>
+
 <div id="main-inner" class="container">
-    <a href="#/admin">Admin panel</a>
     <div class="posts">
     </div>
     <div class="createpost">
+    </div>
+</div>
+
+
+<div class="flash-messages">
+    <div class="comment-created display-hidden">
+        <p><img class="symbol" src="<%= window.location.pathname %>styles/images/symbol_check.gif" alt=""><b>Success!</b> <small>Comment created successfully.</small></p>
     </div>
 </div>

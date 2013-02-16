@@ -1,7 +1,8 @@
 
 
 //PostView kicks ass!
-define(['backbone', 'createCommentView', 'commentListView', "jquery", 'plugins/backbone.layoutmanager'], function (Backbone, CreateCommentView, CommentListView, $) {
+define(['backbone', 'createCommentView', 'commentListView'],
+	function (Backbone, CreateCommentView, CommentListView) {
 
 	var PostView = Backbone.View.extend({
 		template: "post/post",
@@ -13,6 +14,17 @@ define(['backbone', 'createCommentView', 'commentListView', "jquery", 'plugins/b
 		events: {
 			"click .read-more-link": "toggleVisibility",
 			"click .read-less-link": "toggleVisibility"
+		},
+		initialize: function () {
+			this.post = this.model;
+			this.comments = this.model.get('comments');
+
+			this.model.on('change:comments', this.commentAdded, this);
+		},
+		commentAdded: function () {
+			this.listView.trigger('comment:added');
+			$('.comment-created').show().delay(5000).fadeOut();
+			this.render();
 		},
 		toggleVisibility: function () {
 			var rlLink = this.$(".read-less-link"),
@@ -29,11 +41,11 @@ define(['backbone', 'createCommentView', 'commentListView', "jquery", 'plugins/b
 			rlLink.toggle();
 		},
 		beforeRender: function () {
-			var post = this.model;
-			var createCommentView = new CreateCommentView({model: post});
-			var comments = this.model.get('comments');
-			this.insertView('.comment', createCommentView);
-			this.insertView('.comment-list', new CommentListView({collection: comments, model: post}));
+			this.listView = new CommentListView({collection:this.comments, model: this.post});
+			this.createCommentView = new CreateCommentView({model:this.post});
+
+			this.insertView('.comment', this.createCommentView).render();
+			this.insertView('.comment-list', this.listView);
 		},
 		serialize: function() {
 			return { model: this.model.attributes };

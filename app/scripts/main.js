@@ -1,12 +1,13 @@
 require([
-  // Application.
-  "app",
+	// Application.
+	"app",
 
-  // Main Router.
-  "router"
+	// Main Router.
+	"router",
+	"backbone"
 ],
 
-function(app, Router) {
+function(app, Router, Backbone) {
 
   // Define your master router on the application namespace and trigger all
   // navigation from this instance.

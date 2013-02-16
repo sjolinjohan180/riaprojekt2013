@@ -1,6 +1,7 @@
 define([
 	// Application.
 	"app",
+	"backbone",
 	"postListView",
 	"postCollection",
 	"createPostView",
@@ -8,30 +9,37 @@ define([
 	"commentCollection"
 ],
 
-function(app, PostListView, PostCollection, CreatePostView, PostModel, CommentCollection) {
-  // Defining the application router, you can attach sub routers here
-  var Router = Backbone.Router.extend({
-    routes: {
-		"": "index",
-		"admin": "admin"
-    },
+	function (app, Backbone, PostListView, PostCollection, CreatePostView, PostModel, CommentCollection) {
+		'use strict';
 
-    index: function () {
-		var collection = new PostCollection();
-		collection.fetch();
-		var cc = new CommentCollection();
-		cc.fetch();
-		app.useLayout("main").setViews({
-			".posts": new PostListView({model: new PostModel(), collection: collection})
-		}).render();
-    },
-  	admin: function () {
-		app.useLayout("admin").setViews({
-			".createpost": new CreatePostView({collection : new PostCollection()})
-		}).render();
-  	}
-  });
+		// Defining the application router, you can attach sub routers here
+		var Router = Backbone.Router.extend({
+			routes: {
+				"": "index",
+				"admin": "admin"
+			},
 
-  return Router;
+			index: function () {
+				$(".spinner").show();
+				var collection = new PostCollection(),
+					cc = new CommentCollection();
+				collection.fetch();
+				cc.fetch();
+				app.useLayout("main").setViews({
+					".posts": new PostListView({model: new PostModel(), collection: collection})
+				}).render();
+				$(".spinner").fadeOut();
+			},
+			admin: function () {
+				$(".spinner").show();
+				var collection = new PostCollection();
+				app.useLayout("admin").setViews({
+					".createpost": new CreatePostView({collection : collection})
+				}).render();
+				$(".spinner").fadeOut();
+			}
+		});
+
+		return Router;
 
 });

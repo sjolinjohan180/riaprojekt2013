@@ -1,6 +1,6 @@
 
 
-define(['backbone', 'commentModel', 'plugins/backbone.localStorage'], function (Backbone, CommentModel) {
+define(['backbone', 'commentModel'], function (Backbone, CommentModel) {
 
 	var CommentCollection = Backbone.Collection.extend({
 		model: CommentModel,

@@ -1,6 +1,6 @@
 
 
-define(['backbone', 'commentModel', 'plugins/backbone-relational'], function (Backbone, CommentModel) {
+define(['backbone', 'commentModel'], function (Backbone, CommentModel) {
 	var PostModel = Backbone.RelationalModel.extend({
 
 		defaults: {
@@ -10,7 +10,7 @@ define(['backbone', 'commentModel', 'plugins/backbone-relational'], function (Ba
 			sticky: "False"
 		},
 		initialize: function () {
-			this.on('add:comment', this.addComment, this)
+			this.on('add:comment', this.addComment, this);
 		},
 		addComment: function (comment) {
 			this.get('comments').add(comment);
