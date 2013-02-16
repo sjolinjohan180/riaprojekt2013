@@ -23,7 +23,7 @@ define(['backbone', 'postModel', 'jquery'], function (Backbone, PostModel, $) {
 				imagesToStore = [];
 
 			imgTags = document.getElementsByClassName("uploadedImage");
-			console.log(imgTags.length)
+
 			for(var i = 0; i < imgTags.length; ++i){
 				imgContext.drawImage(imgTags[i], 0, 0);
 				imageAsDataUrl = imgCanvas.toDataURL("image/png");
