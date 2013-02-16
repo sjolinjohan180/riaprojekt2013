@@ -52,12 +52,9 @@ define(['backbone', 'postModel', 'app'], function (Backbone, PostModel, app) {
 				imgTags,
 				imgCanvas = document.createElement('canvas'),
 				imgContext = imgCanvas.getContext('2d'),
-				postTitle = this.$('#prop-title'),
+				postTitle = this.$('#prop-title').val(),
 				imagesToStore = [],
 				i;
-
-			postTitle = postTitle.find('script').remove();
-			console.log(postTitle);
 
 			imgTags = document.getElementsByClassName("uploadedImage");
 			for(i = 0; i < imgTags.length; ++i){
@@ -66,7 +63,7 @@ define(['backbone', 'postModel', 'app'], function (Backbone, PostModel, app) {
 				imagesToStore.push(imageAsDataUrl);
 			};
 
-			localStorage.setItem(postTitle.val()+"-images",JSON.stringify(imagesToStore));
+			localStorage.setItem(postTitle+"-images",JSON.stringify(imagesToStore));
 
 			this.post.set('title', postTitle);
 			this.post.set('content', this.$('#prop-content').html());
