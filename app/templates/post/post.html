@@ -1,12 +1,28 @@
-<h2 class="header"><%= model.title %></h2>
-<small>By: <b><%= model.author %></b></small>
+<h2 class="header pull-left">
+    <%= model.title %>
+</h2>
+
+<div class="pull-right">
+    <a class="post-edit-link" href="<%= window.location.pathname %>#/post/manage/<%= model.id %>">
+        <img src="<%= window.location.pathname %>styles/images/edit.png" alt="">
+    </a>
+</div>
+
+<div class="clear-fix"></div>
+
+<small>
+    by <b><%= model.author %></b>
+</small>
+
 <div class="content-container content-container-toggle">
     <div class="post-content">
         <%= model.content %>
     </div>
     <div class="fade-out"></div>
 </div>
+
 <a href="#" class="read-more-link">Show more</a>
 <a href="#"class="read-less-link display-hidden">Show less</a>
+
 <div class="comment"></div>
 <div class="comment-list"></div>

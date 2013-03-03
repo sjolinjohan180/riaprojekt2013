@@ -4,18 +4,18 @@ define([
 ],
 
 function(Backbone) {
+	'use strict';
+	// Provide a global location to place configuration settings and module
+	// creation.
+	var app = {
+		// The root path to run the application.
+		root: window.location.pathname
+	};
 
-  // Provide a global location to place configuration settings and module
-  // creation.
-  var app = {
-    // The root path to run the application.
-    root: window.location.pathname
-  };
+	// Localize or create a new JavaScript Template object.
+	var JST = window.JST = window.JST || {};
 
-  // Localize or create a new JavaScript Template object.
-  var JST = window.JST = window.JST || {};
-
-  // Configure LayoutManager with Backbone Boilerplate defaults.
+	// Configure LayoutManager with Backbone Boilerplate defaults.
 	Backbone.LayoutManager.configure({
 		// Allow LayoutManager to augment Backbone.View.prototype.
 		manage: true,

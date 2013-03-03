@@ -1,36 +1,45 @@
-
+// Class: CommentListView
+// Usage: Presents comments as a list
+//	new CommentListView({collection: commentCollection, model: post})
+// Dependencies:
+//	Backbone
+//	CommentView
 
 
 define(['backbone', 'commentView'], function (Backbone, CommentView) {
 	'use strict';
 
 	var CommentListView = Backbone.View.extend({
+
 		template: "comment/commentlist",
+
 		events: {
-			"click .show-comments-link": "showComments",
-			"click .hide-comments-link": "hideComments"
+			"click .show-comments-link": "showHideComments",
+			"click .hide-comments-link": "showHideComments"
 		},
+		//Loops the comments passed to this object and creates a commentView for each item
 		beforeRender: function () {
-			var commentView;
+			var commentView,
+				that = this;
+
 			this.collection.forEach(function (comment) {
 				if(comment){
 					commentView = new CommentView({model: comment});
-					this.insertView('.comments', commentView);
+					that.insertView('.comments', commentView);
 				}
-			}, this);
+			}, that);
 		},
+
 		serialize: function () {
+			var that = this;
 			return {
-				count: _.size(this.collection)
+				count: _.size(that.collection)
 			};
 		},
-		showComments: function () {
-			this.$('.comments').show("slow");
-			this.$('.show-comments-link').hide();
-		},
-		hideComments: function () {
-			this.$('.comments').hide("slow");
-			this.$('.show-comments-link').show();
+		//Toggle the visibility of the comment list
+		showHideComments: function () {
+			this.$('.comments').toggle("slow");
+			this.$('.show-comments-link').toggle();
 		}
 
 	});
