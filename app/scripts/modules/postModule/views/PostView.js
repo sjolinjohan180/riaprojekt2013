@@ -50,7 +50,6 @@ define(['backbone', 'createCommentView', 'commentListView'],
 		serialize: function() {
 			return { model: this.model.attributes };
 		}
-
 	});
 
 	return PostView;
