@@ -14,56 +14,63 @@ footer{
 }
 
 header{
-    font-family: helveticaNeue-light;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: lighter;
-    color:#A85E64;
+    color:#B29985;
     font-size: 3em;
     text-align: right;
     height: auto;
-    background-color: #E9E3D7;
+    background-color: #FFFFFF;
+    -background-image: url("images/ricepaper.png");
     z-index: 9999;
-    padding: 10px 105px 10px 0;
-    margin: 0;
-    border-bottom: 1px solid #dddddd;
+    padding: 15px 105px 15px 0;
+
+    border-bottom: 1px solid #c8c8c8;
+    border-top: 1px solid #c8c8c8;
+    box-shadow: 1px 1px 15px #CCC;
 }
 
 header b{
-    color: #84B8B6;
+    color: #E9E3D7;
     font-size: 0.8em;
     vertical-align: top
 }
 
 nav{
     z-index: 9999;
-    font-size: 1.8em;
-    padding: 10px;
-    font-family: helveticaneue-light;
-    margin: -4px 0 70px 0;
+    font-size: 1.2em;
+    padding: 30px 10px 10px 10px;
+    margin: 0 0 30px 0;
 }
 
 nav a{
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: #E9E3D7;
-    border-bottom: 1px solid #dddddd;
-    border-right: 1px solid #dddddd;
-    border-left: 1px solid #dddddd;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
     padding: 2px 10px 7px 10px;
-    color: #444444;
+    color: #666;
+    font-weight: lighter;
     margin: 0 0 0 32px;
 }
 
 nav a:visited{
-    color:#444444;
+    color:#666;
 }
 
 nav a:hover{
     text-decoration: none;
+    color: #000000;
 }
 
 nav a.active{
-    color: rgb(221,57,13);
+    background-image: url("images/black_dot (1).png");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top:15px;
+    color: #000000;
 }
+
 
 /* Post div, displays one post with header, content, and some comment stuff */
 .post-inline{
@@ -81,13 +88,22 @@ nav a.active{
     margin: 7px 0 0 0 ;
     font-size: 1.4em;
     line-height: 30px;
-    font-family: helveticaNeue-light;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: lighter;
+    width: 90%;
 }
 
 .post-inline small {
     font-size: 0.75em;
-    font-family: helveticaNeue-light;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.post-edit-link img{
+    margin: 9px 0 0 0px;
+    width: 20px;
+    opacity: 0.8;
 }
 
 /* A gradient to hide overflow content in the posts content area */
@@ -118,6 +134,7 @@ nav a.active{
 .post-content {
     font-family: Georgia,Times,serif;
     margin: 10px 0 0 0;
+    color: #323232;
     min-height: 100px;
 }
 
@@ -132,6 +149,17 @@ nav a.active{
     margin: 10px 0 -10px 0;
 }
 
+.close-popover:visited{
+    color: #CCC;
+}
+
+.close-popover{
+    color: #CCC;
+}
+
+.close-popover:hover{
+    text-decoration: none;
+}
 /* pusher */
 .hide-comments-container{
     margin:  0 0 10px 0;
@@ -144,9 +172,16 @@ nav a.active{
 
 /* Admin page*/
 
+#create-post-container{
+    padding: 20px 0 0 0;
+}
+
 /* Create posts all inputs */
 .create-post-input{
     width: 338px;
+
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 /* Place holder styles */
@@ -171,17 +206,32 @@ nav a.active{
 
 ::-webkit-input-placeholder{
     font-size: 0.9em;
-    font-family: HelveticaNeue-Light;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 :-ms-input-placeholder{
     font-size: 0.9em;
-    font-family: HelveticaNeue-Light;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 ::-moz-placeholder{
     font-size: 0.9em;
-    font-family: HelveticaNeue-Light;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+/* Delete button */
+
+.delete-post{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+    background-color: #E9E3D7;
+    color: #B29985;
+    border: 1px solid #CCC;
+    margin: 6px 40px 0 0;
+    float:right;
 }
 
 /* Commentview, sub-view to postview */
@@ -234,7 +284,8 @@ nav a.active{
     background-color: #FFFFFF;
     border-top: none;
     padding: 5px;
-    font-family: HelveticaNeue-Light;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 /* class given to #prop-content when dragenter event occures */
@@ -284,15 +335,16 @@ nav a.active{
 
 /* Submit button, big and green */
 #submit-post{
-    background-color: #E9E3D7;
+    background-color: #C1E0C7;
     border: none;
     font-size: 1.4em;
-    color: #A85E64;
+    color: #709377;
     width: 350px;
     height: 50px;
     margin: 5px 0 0 0;
     border: 1px solid #CCC;
-    font-family: HelveticaNeue;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 /* Flash messages */
@@ -301,9 +353,11 @@ nav a.active{
 .flash-messages{
     width: 100%;
     position: fixed;
-    top: 88px;
-    margin: 0 0 0 -130px;
+    top: 80px;
+    left: 500px;
+    margin: 0 0 0 470px;
     padding: 20px;
+    width: 250px;
 }
 /* For all flash messages */
 .comment-created, .no-posts-flash{
@@ -351,7 +405,7 @@ nav a.active{
 }
 
 .margin-auto{
-    width: 390px;
+    width: 490px;
     margin: 0 auto;
 }
 /* Icons */
@@ -364,4 +418,18 @@ nav a.active{
     position: absolute;
     top: 90px;
     left: 590px;
+}
+
+.clear-fix{
+    clear:both;
+}
+.error{
+    margin: 5px 0 0 0;
+    color: #942a25;
+}
+.create-post-input.error{
+    border:1px solid #942a25;
+}
+#prop-content.error{
+    border: 1px solid #942a25;
 }

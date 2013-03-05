@@ -144,7 +144,7 @@ module.exports = function( grunt ) {
     // usemin handler should point to the file containing
     // the usemin blocks to be parsed
     'usemin-handler': {
-      html: 'index.html'
+      html: 'test_index.html'
     },
 
     // update references in HTML/CSS to revved files

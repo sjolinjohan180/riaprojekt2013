@@ -50,7 +50,7 @@
 //     });
 //
 // For a working example of Brocco used to document multiple
-// source files, see [index.html](?index.html).
+// source files, see [test_index.html](?test_index.html).
 //
 // For more information on the use and behavior of specific API calls,
 // consult the [test suite](test/).

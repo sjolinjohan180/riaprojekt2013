@@ -1,7 +1,11 @@
-<div class="container">
+<div class="container" id="create-post-container">
     <div class="margin-auto">
-        <input placeholder="Author" type="text" name="" id="prop-author" class="create-post-input" tabindex="3"><br>
-        <input placeholder="Title" type="text" name="" id="prop-title" class="create-post-input" tabindex="4">
+
+
+        <input value="<%= model.author %>" placeholder="Author" type="text" name="" id="prop-author" class="create-post-input" tabindex="3">
+        <span class="error prop-author help-inline"></span>
+        <input value="<%= model.title %>" placeholder="Title" type="text" name="" id="prop-title" class="create-post-input" tabindex="4">
+        <span class="error prop-author help-inline"></span>
         <div class="tool-bar">
             <b><a href="#" class="bold-link format-link">B</a></b>
             <i><a href="#" class="italic-link format-link">I</a></i>
@@ -37,13 +41,33 @@
                 </a>
             </span>
         </div>
-        <div contenteditable="true" name="" id="prop-content" tabindex="5"></div>
+        <div contenteditable="true" data-content="Press Command/Ctrl + S to save.<br> To insert an image, simply drag-n-drop them to this box from your hard drive. Remove image by hitting backspace." data-original-title="<b>Tips</b><a href='#' class='close-popover pull-right'>x</a>" name="" id="prop-content" tabindex="5">
+            <%= model.content %>
+        </div>
         <label for="prop-sticky" class="display-hidden">
             <input type="checkbox" disabled checked="checked" id="prop-sticky" tabindex="6">
             Sticky
         </label>
         <p>
-            <button id="submit-post"tabindex="7">Create</button>
+            <% if (model.id) { %>
+            <input type="hidden" value="<%= model.id %>">
+            <button class="delete-post">Delete post</button>
+            <% } %>
+            <button id="submit-post"tabindex="7"><%= model.id ? 'Update' : 'Create' %></button>
         </p>
+    </div>
+</div>
+
+
+<div id="only-image-modal" class="modal hide fade">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Woops!</h3>
+    </div>
+    <div class="modal-body">
+        <p>You can only drag-n-drop <b>image files</b> into the content editor.</p>
+    </div>
+    <div class="modal-footer">
+        <button data-dismiss="modal" aria-hidden="true" class="btn">Okay</button>
     </div>
 </div>
