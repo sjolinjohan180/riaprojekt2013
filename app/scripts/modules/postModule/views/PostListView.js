@@ -4,7 +4,6 @@
 // Dependencies:
 //	Backbone
 //	PostView
-
 define(
 [
 	'backbone',

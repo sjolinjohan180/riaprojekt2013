@@ -3,8 +3,12 @@
 // Dependencies:
 //	Backbone
 //	CommentModel
-
-define(['backbone', 'commentModel'], function (Backbone, CommentModel) {
+define(
+[
+	'backbone',
+	'commentModel'
+],
+function (Backbone, CommentModel) {
 	'use strict';
 
 	var CommentCollection = Backbone.Collection.extend({
