@@ -44,7 +44,7 @@ define(['backbone', 'commentModel', 'bootstrap'], function (Backbone, CommentMod
 				month = "0" + month;
 			}
 
-			dateString = monthNames[parseInt(month)] + " " + date.getDate() + ", "+ date.getFullYear();
+			dateString = monthNames[parseInt(month, 10)] + " " + date.getDate() + ", "+ date.getFullYear();
 
 			return dateString;
 		},

@@ -13,7 +13,7 @@ function(Backbone) {
 	};
 
 	// Localize or create a new JavaScript Template object.
-	var JST = window.JST = window.JST || {};
+	var JST = app.JST = app.JST || {};
 
 	// Configure LayoutManager with Backbone Boilerplate defaults.
 	Backbone.LayoutManager.configure({
