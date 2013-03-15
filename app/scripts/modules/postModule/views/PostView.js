@@ -30,8 +30,6 @@ define(['backbone', 'createCommentView', 'commentListView'],
 		},
 
 		commentAdded: function () {
-			this.listView.trigger('comment:added');
-			$('.comment-created').show().delay(5000).fadeOut();
 			this.render();
 		},
 

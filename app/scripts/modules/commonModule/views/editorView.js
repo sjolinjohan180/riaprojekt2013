@@ -21,6 +21,7 @@ define(['backbone', 'app'], function (Backbone, app) {
 		deletePost: function () {
 			var self = this;
 			self.model.destroy();
+			Backbone.trigger('show:successMessage', { header: "Success!", text: "Post was deleted." });
 			self.navigateTo('/');
 		},
 		//Sets the attributes on this.model to values of textboxes in form and sends the post to savePost function
@@ -51,6 +52,7 @@ define(['backbone', 'app'], function (Backbone, app) {
 			if (model.validationError) {
 				self.inValid(model.errors);
 			} else {
+				Backbone.trigger('show:successMessage', { header: "Success!", text: "Post was updated." });
 				self.navigateTo('/');
 			}
 		},

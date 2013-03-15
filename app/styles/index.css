@@ -346,43 +346,6 @@ nav a.active{
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
     Helvetica, Arial, "Lucida Grande", sans-serif;
 }
-
-/* Flash messages */
-
-/* flash message basic style */
-.flash-messages{
-    width: 100%;
-    position: fixed;
-    top: 80px;
-    left: 500px;
-    margin: 0 0 0 470px;
-    padding: 20px;
-    width: 250px;
-}
-/* For all flash messages */
-.comment-created, .no-posts-flash{
-    margin: 0 auto;
-    color: #FFFFFF;
-    text-align:center;
-    width: 250px;
-    padding: 14px 20px 4px 20px;
-    -webkit-animation-name: spaceboots;
-    -webkit-animation-duration: 0.5s;
-    -webkit-transform-origin:50% 50%;
-    -webkit-animation-timing-function: linear;
-}
-/* flash message when no posts are found*/
-.no-posts-flash{
-    padding: 14px 20px 14px 20px;
-    background-color: #A85E64;
-    font-size: 0.9em;
-}
-/* flash message for when comment is created */
-.comment-created{
-    background-color: #6D8764;
-    font-size: 0.9em;
-}
-
 /* Makes a div wiggle*/
 @-webkit-keyframes spaceboots {
     0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
@@ -398,6 +361,45 @@ nav a.active{
     100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+/*Flash message container and content*/
+
+.flash-container{
+    position: absolute;
+    top: 70px;
+    left: 35%;
+    padding: 10px 15px 10px 15px;
+}
+
+.flash-container .error{
+    background-color: #A85E64;
+}
+
+.flash-container .success{
+    background-color: #6D8764;
+}
+
+.flash-container div{
+    padding: 10px 15px 10px 15px;
+    color: #FFFFFF;
+    font-family: "helveticaneue-light";
+    -webkit-animation-name: spaceboots;
+    -webkit-animation-duration: 0.5s;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-timing-function: linear;
+}
+
+.flash-container h2, .flash-container p{
+    display: inline-block;
+}
+
+.flash-container h2{
+    font-size: 0.92em;
+    margin: 0 2px 0 0;
+}
+
+.flash-container p {
+    font-size: 0.82em;
+}
 /*Generics*/
 
 .display-hidden{
@@ -410,7 +412,19 @@ nav a.active{
 }
 /* Icons */
 .symbol{
-    margin: 0 5px 0 0 ;
+    margin: 0 5px -5px 0 ;
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+}
+
+.symbol-check{
+    background-image: url("images/symbol_check.gif");
+}
+
+.symbol-cross{
+    background-image: url("images/symbol_cross.gif");
 }
 
 .spinner{

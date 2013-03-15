@@ -26,10 +26,11 @@ function (Backbone, PostView) {
 			}, this);
 		},
 
-		serialize: function () {
-			return {
-				count: this.collection.models.length
-			};
+		initialize: function () {
+
+			if (this.collection.models.length === 0) {
+				Backbone.trigger('show:errorMessage', { header: "Oh snap!", text: "No posts was found." });
+			}
 		}
 	});
 

@@ -11,16 +11,17 @@ define([
 	"postModel",
 	"commentCollection",
 	"managePostView",
-	"navigationView"
+	"navigationView",
+	"appView"
 ],
 
-	function (app, Backbone, PostListView, PostCollection, CreatePostView, PostModel, CommentCollection, ManagePostView, NavigationView) {
+	function (app, Backbone, PostListView, PostCollection, CreatePostView, PostModel, CommentCollection, ManagePostView, NavigationView, AppView) {
 		'use strict';
 
 		// Defining the application router, you can attach sub routers here
 		var Router = Backbone.Router.extend({
 			initialize: function () {
-
+				this.appView = new AppView();
 			},
 
 			routes: {

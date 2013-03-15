@@ -30,6 +30,7 @@ define(['backbone', 'commentModel', 'bootstrap'], function (Backbone, CommentMod
 		},
 		//Triggers an event on this.model (parent post) so it saves the comment to its collection
 		saveComment: function () {
+			Backbone.trigger('show:successMessage', { header: "Success!", text: "Comment was created." })
 			this.model.trigger('add:comment', this.comment);
 		},
 		//Format the created_at date so it is in format: Example: May 30, 2013
