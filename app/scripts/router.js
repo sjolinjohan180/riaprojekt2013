@@ -10,15 +10,17 @@ define([
 	"createPostView",
 	"postModel",
 	"commentCollection",
-	"managePostView"
+	"managePostView",
+	"navigationView"
 ],
 
-	function (app, Backbone, PostListView, PostCollection, CreatePostView, PostModel, CommentCollection, ManagePostView) {
+	function (app, Backbone, PostListView, PostCollection, CreatePostView, PostModel, CommentCollection, ManagePostView, NavigationView) {
 		'use strict';
 
 		// Defining the application router, you can attach sub routers here
 		var Router = Backbone.Router.extend({
 			initialize: function () {
+
 			},
 
 			routes: {
@@ -35,6 +37,7 @@ define([
 				cc.fetch();
 
 				app.useLayout("main").setViews({
+					".main-nav": new NavigationView(),
 					".posts": new PostListView({model: new PostModel(), collection: collection})
 				}).render();
 				$(".spinner").fadeOut();
@@ -43,6 +46,7 @@ define([
 				$(".spinner").show();
 				var collection = new PostCollection();
 				app.useLayout("admin").setViews({
+					".main-nav": new NavigationView(),
 					".createpost": new CreatePostView({collection : collection})
 				}).render();
 				$(".spinner").fadeOut();
@@ -55,6 +59,7 @@ define([
 				model = collection.get(id);
 
 				app.useLayout("admin").setViews({
+					".main-nav": new NavigationView(),
 					".managepost": new ManagePostView({model:model, collection : collection})
 				}).render();
 				$(".spinner").fadeOut();
