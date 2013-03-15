@@ -33,7 +33,7 @@ require.config({
 	createCommentView: "../scripts/modules/commentModule/views/createCommentView",
 	//Common module
 	editorView: "../scripts/modules/commonModule/views/editorView",
-  	navigationView: "../scripts/modules/commonModule/views/navigationView"
+  	navigationView: "../scripts/modules/commonModule/views/NavigationView"
   },
 
   shim: {
