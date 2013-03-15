@@ -8,7 +8,7 @@ define(['backbone'], function (Backbone) {
 	var NavigationView = Backbone.View.extend({
 
 		template: 'common/mainNavigation'
-
+ 
 	});
 
 	return NavigationView;
